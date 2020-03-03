@@ -2,24 +2,24 @@ import React, { Component } from 'react';
 import {fetchItems} from '../actions/itemActions';
 import {connect} from 'react-redux';
 import {PropTypes} from 'prop-types';
+import Item from './Item';
 
 
 class ItemsContainer extends Component {
     
-    componentWillMount(){
+    componentDidMount(){
         this.props.fetchItems();
     }
 
 
     render() {
-        console.log(this.props.items);
         
-        let id=0;
-        const items = this.props.items.map(item => 
-            <p key={id++}>{item.title}</p>
+        const items = this.props.items.map((item, index) => 
+            <Item key={index} item={item}/>
+
         );
         return (
-        <div>
+        <div className='flex-row'>
             {items}
         </div>
         );

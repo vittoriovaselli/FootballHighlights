@@ -22,3 +22,32 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+/* my classes */
+
+.flex-row{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2rem;
+}
+
+@media(max-width: 600px){
+  .flex-row{
+    margin:0.5rem;
+  }
+  .card{
+    width: 100%!important;
+  }
+}
+
+.card{
+  margin-bottom: 2rem!important;
+}
+
+.card-img-top{
+  height: 18.75rem;
+}
+
