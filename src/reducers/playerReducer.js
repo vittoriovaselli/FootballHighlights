@@ -1,19 +1,20 @@
-import {FETCH_ITEMS} from '../actions/types'
+import {TOGGLE_PLAYER} from '../actions/types'
 
 const initialState = {
-    items:[]
+    isVideoPlayerOpen: false,
+    link: {}
 };
 
 export default function(state = initialState, action){
     switch(action.type){
-        case FETCH_ITEMS:
+        case TOGGLE_PLAYER:
             return{
                 ...state,
-                items: action.payload
+                isVideoPlayerOpen: !state.isVideoPlayerOpen,
+                link: action.payload
             }
         default:
             return state;
     }
 
 } 
-

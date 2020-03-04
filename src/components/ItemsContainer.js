@@ -14,10 +14,10 @@ class ItemsContainer extends Component {
 
     render() {
         
-        const items = this.props.items.map((item, index) => 
-            <Item key={index} item={item}/>
-
-        );
+        const items = !this.props.isVideoPlayerOpen && 
+        this.props.items.map((item, index) => 
+            <Item key={index} item={item}/> 
+            );
         return (
         <div className='flex-row'>
             {items}
@@ -29,10 +29,12 @@ class ItemsContainer extends Component {
 ItemsContainer.propTypes = {
     fetchItems: PropTypes.func.isRequired,
     items: PropTypes.array.isRequired,
+    isVideoPlayerOpen:  PropTypes.bool.isRequired
 };
 
 const mapStateToProps = state => ({
     items: state.items.items,
+    isVideoPlayerOpen: state.player.isVideoPlayerOpen
   });
   
 export default connect(mapStateToProps, { fetchItems })(ItemsContainer);
