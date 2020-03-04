@@ -1,7 +1,8 @@
-import {FETCH_ITEMS} from '../actions/types'
+import {FETCH_ITEMS, FILTER_ITEMS} from '../actions/types'
 
 const initialState = {
-    items:[]
+    items:[],
+    searchKeyword:''
 };
 
 export default function(state = initialState, action){
@@ -10,6 +11,11 @@ export default function(state = initialState, action){
             return{
                 ...state,
                 items: action.payload
+            }
+        case FILTER_ITEMS:
+            return{
+                ...state,
+                searchKeyword: action.payload
             }
         default:
             return state;

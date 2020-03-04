@@ -13,9 +13,20 @@ class ItemsContainer extends Component {
 
 
     render() {
-        
+        let filteredItems = []
+
+        if(this.props.searchKeyword!== ''){
+            filteredItems =this.props.items.filter(item=>{
+                return (item.title.toUpperCase().includes(this.props.searchKeyword)||
+                (item.competition.name.toUpperCase().includes(this.props.searchKeyword)));
+            }); 
+        }
+        else{
+            filteredItems = this.props.items;
+        }
+
         const items = !this.props.isVideoPlayerOpen && 
-        this.props.items.map((item, index) => 
+        filteredItems.map((item, index) => 
             <Item key={index} item={item}/> 
             );
         return (
@@ -34,7 +45,8 @@ ItemsContainer.propTypes = {
 
 const mapStateToProps = state => ({
     items: state.items.items,
-    isVideoPlayerOpen: state.player.isVideoPlayerOpen
+    isVideoPlayerOpen: state.player.isVideoPlayerOpen,
+    searchKeyword: state.items.searchKeyword
   });
   
 export default connect(mapStateToProps, { fetchItems })(ItemsContainer);

@@ -1,4 +1,4 @@
-import {FETCH_ITEMS} from './types'
+import {FETCH_ITEMS, FILTER_ITEMS} from './types'
 
 export const fetchItems = () => dispatch =>{
     fetch('https://www.scorebat.com/video-api/v1/')
@@ -9,5 +9,13 @@ export const fetchItems = () => dispatch =>{
             payload: items
         })
     );
+}
+
+export const filterItems = keyword => dispatch => {   
+
+    dispatch({
+        type: FILTER_ITEMS,
+        payload: keyword
+    })
 }
 
