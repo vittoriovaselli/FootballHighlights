@@ -1,7 +1,6 @@
 .App {
   text-align: center;
-  background-color: rgba(0,20,1,0.1);
-
+  background-color: #fff;
 }
 
 
@@ -44,7 +43,32 @@
 }
 
 .search-buttons{
-  margin: 5px; 
+  margin: 5px!important; 
+}
+
+.fav-bar{
+  display: flex;
+  flex-flow: row;
+  position: absolute;
+  top:0;
+  right: 0;
+  margin-right: 12px;
+  margin-top:12px;
+  align-items:center ;
+}
+
+.fav-icon{
+  width: 36px;
+  height: 36px;
+  margin: 4px;
+}
+
+.fav-text{
+  color: white;
+}
+
+.card-body{
+  background-color: #fcfffa;
 }
 
 @media(max-width: 600px){
@@ -73,6 +97,10 @@
   
   
 
+}
+
+.btn{
+  margin:15px;
 }
 
 .card{
