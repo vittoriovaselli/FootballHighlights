@@ -93,6 +93,13 @@
   background-color: #fcfffa;
 }
 
+.close-button{
+  position: absolute;
+  top: 8px;
+  right:8px; 
+  z-index:1
+}
+
 @media(max-width: 600px){
   .flex-row{
     margin:0.5rem;
@@ -117,9 +124,10 @@
   }
   .App-footer{
     justify-content: center;
+  }  
+  .embed-container{
+    top:15%!important; 
   }
-
-  
   
 
 }
@@ -145,12 +153,7 @@
   overflow-y: hidden;
 }
 
-.close-button{
-  position: absolute;
-  top: 8px;
-  right:8px; 
-  z-index:1
-}
+
 
 
 

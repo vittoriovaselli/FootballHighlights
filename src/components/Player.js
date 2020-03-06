@@ -17,7 +17,7 @@ class Player extends Component {
         <div className="player-background">
             <Button variant='danger' className="close-button" onClick={this.props.togglePlayer}>X</Button>
 
-            <div style={{position: 'absolute', top: '0px', width:'80%', left:'10%'}}>
+            <div className="embed-container" style={{position: 'absolute', top: '0px', width:'80%', left:'10%'}}>
             <div style={{width:'100%',height:'0px',position:'relative',paddingBottom:'calc(56.25% + 335px)'}} className='scorebatEmbeddedPlayerW'>
             <iframe title="title" src={this.props.link} frameBorder='0' width='560' height='650' allowFullScreen allow='autoplay; fullscreen' style={{width:'100%',height:'100%',position:'absolute',left:'0px',top:'0px',overflow:'hidden'}} className='scorebatEmbeddedPlayer'>
             </iframe>
