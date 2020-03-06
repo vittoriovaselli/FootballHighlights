@@ -7,6 +7,7 @@ import ItemsContainer from './components/ItemsContainer'
 import Player from './components/Player';
 import Header from './components/Header'
 import SearchBar from './components/SearchBar';
+import Footer from './components/Footer';
 
 
 class App extends Component {
@@ -15,10 +16,14 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <Header/>
-          <SearchBar/>
-          <ItemsContainer/> 
-          <Player/>
+          <div>
+            <Header/>
+            <SearchBar/>
+            <ItemsContainer/> 
+
+          </div>
+          <Player/>    
+          <Footer/>
         </div>
       </Provider>
     );
